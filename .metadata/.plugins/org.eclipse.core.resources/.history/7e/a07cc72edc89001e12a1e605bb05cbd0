@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="QuanLySinhVien">
+        <property name="context-root" value="QuanLySinhVien"/>
+        <property name="java-output-path" value="/QuanLySinhVien/build/classes"/>
+    </wb-module>
+</project-modules>

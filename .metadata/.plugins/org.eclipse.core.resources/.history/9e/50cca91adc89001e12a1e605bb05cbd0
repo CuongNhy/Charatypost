@@ -1,0 +1,7 @@
+package model.bean;
+
+public class SinhVien {
+	private IDSV;
+	private Name;
+	private 
+}

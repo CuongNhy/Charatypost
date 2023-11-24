@@ -1,0 +1,33 @@
+package model.dao;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+
+import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.ArrayList;
+
+import model.bean.Admin;
+
+public class CheckLoginDAO {
+	public boolean isExistUser(String userName, String passWord) {
+		// Connect vào DB làm một số việc
+		// Tất cả những câu SQL đều phải đặt ở DAO
+		return true;
+	}
+	
+	public ArrayList<Admin> getAdminList (String userName){
+		ArrayList<Admin> result = new ArrayList<Admin>();
+		//connect vào DB làm một số việc
+		Admin admin = new Admin();
+		admin.setID("3");
+		admin.setUserName("user2");
+		admin.setPassWord("3");
+		result.add(admin);
+		
+		return result;
+	}
+}

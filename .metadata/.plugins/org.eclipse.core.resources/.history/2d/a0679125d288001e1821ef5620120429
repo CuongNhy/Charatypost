@@ -1,0 +1,28 @@
+package model.bean;
+
+public class Admin {
+	private String ID;
+	private String UserName;
+	private String PassWord;
+	
+	public String getID() {
+		return ID;
+	}
+	public void setID(String ID) {
+		this.ID = ID;
+	}
+	
+	public String getUserName() {
+		return UserName;
+	}
+	public void setUserName(String UserName) {
+		this.UserName = UserName;
+	}
+	
+	public String getID() {
+		return ID;
+	}
+	public void setID(String ID) {
+		this.ID = ID;
+	}
+}

@@ -1,0 +1,5 @@
+package modle.bean;
+
+public class SinhVien {
+
+}

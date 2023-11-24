@@ -1,0 +1,18 @@
+package model.dao;
+
+import java.util.ArrayList;
+
+import modle.bean.SinhVien;
+
+public class XemDanhSachSinhVienDAO {
+	public ArrayList<SinhVien> getSinhVienList  (){
+		ArrayList<SinhVien> result = new ArrayList<SinhVien>();
+		try {
+			Class.forName(null)
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return result;
+	}
+}

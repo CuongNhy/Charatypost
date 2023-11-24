@@ -1,0 +1,48 @@
+<%@ page language="java" import="jakarta.servlet.RequestDispatcher" %>
+<%@ page language="java" import="jakarta.servlet.ServletException" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.ResultSetMetaData" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kết quả truy vấn</title>
+</head>
+<body>
+    <h1>Kết quả truy vấn</h1>
+    <%
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DULIEU1","root","");
+            Statement stm = cnn.createStatement();
+            String sql = "SELECT * FROM admin"; // Truy vấn thông tin từ bảng admin
+            ResultSet rs = stm.executeQuery(sql);
+    %>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>UserName</th>
+            <th>Password</th>
+        </tr>
+        <% while (rs.next()) { %>
+        <tr>
+            <td><%= rs.getInt("ID") %></td>
+            <td><%= rs.getString("UserName") %></td>
+            <td><%= rs.getString("PassWord") %></td>
+        </tr>
+        <% } %>
+    </table>
+    <%
+        rs.close();
+        stm.close();
+        cnn.close();
+        } catch (Exception e) {
+            out.println("Lỗi: " + e.getMessage());
+        }
+    %>
+</body>
+</html>

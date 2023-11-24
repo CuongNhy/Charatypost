@@ -1,0 +1,60 @@
+<%@ page language="java" import="jakarta.servlet.RequestDispatcher" %>
+<%@ page language="java" import="jakarta.servlet.ServletException" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.ResultSetMetaData" %>
+
+<%
+	String user = request.getParameter("user");
+	String password = request.getParameter("password");
+	
+	String address = "Quang Chau";
+	
+	Boolean isValid = false; //Truy cập vào database xem user và password có đúng không 
+	try{
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DULIEU1","root","");
+		Statement stm = cnn.createStatement();
+		System.out.println("ket noi thanh còng");
+		String sql = "SELECT * FROM admin"; //truy vấn thông tin từ bảng admin
+		ResultSet rs = stm.executeQuery(sql);
+		//while(rs.next()){
+		//	if( user.equals(rs.getString(2)) ){
+		//		isValid = true;
+		//		break; //bẻ gãy và thoát
+		//	}
+		//}
+		while (rs.next()) {
+		    System.out.println("ID: " + rs.getInt("ID") + ", UserName: " + rs.getString("UserName") + ", Password: " + rs.getString("PassWord"));
+		}
+
+/*		
+	} 
+	catch (Exception e){
+		System.out.println(e);
+	}
+	
+	if(isValid == true){ //đăng nhập thành công đi tới welcome.jsp
+		request.setAttribute("address", address);
+		RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
+		rd.forward(request, response);
+	} 
+	else { // thất bạn đi về trang login.jsp
+		response.sendRedirect("login.jsp");
+	}
+*/
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+</body>
+</html>

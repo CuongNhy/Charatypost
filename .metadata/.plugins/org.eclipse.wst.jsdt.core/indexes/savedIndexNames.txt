@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+E:\Xampp\htdocs\CNWeclip-QLSV\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1248869856.index
+2024619022.index
+1518581118.index
+761821293.index
+1158017543.index
+2806194882.index

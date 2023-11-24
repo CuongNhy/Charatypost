@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<% 
+		String temp =  (String)session.getAttribute("temp"); 
+		String address =(String)request.getAttribute("address");
+	%>
+	
+	Your user : <%= request.getParameter("user") %>
+	<br>
+	Your password : <%= request.getParameter("password") %>
+	<br>
+	Your address : <%= address %>
+	<br>
+	Your Temp  = <%= temp %>
+</body>
+</html>

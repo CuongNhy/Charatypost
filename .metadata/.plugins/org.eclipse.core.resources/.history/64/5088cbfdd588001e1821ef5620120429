@@ -1,0 +1,34 @@
+package controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import model.bean.Admin;
+import model.bo.CheckLoginBO;
+
+public class CheckLoginServlet  extends HttpServlet{
+	private static final long serialVersionUID = 1L;
+	
+	protected void doGet 
+		(HttpServletRequest request, 
+		HttpServletResponse reponse) throws ServletException,
+		IOException {
+			doPost(request, reponse);
+	}
+	
+	protected void doPost 
+		(HttpServletRequest request, 
+		HttpServletResponse reponse) throws ServletException,
+		IOException {	
+			String destination = null;
+			String userName = request.getParameter("user");
+			String passWord = request.getParameter("password");
+			
+			CheckLoginBO checkLoginBO = new CheckLoginBO();
+			ArrayList<Admin> adminArray = null;
+	}
+}

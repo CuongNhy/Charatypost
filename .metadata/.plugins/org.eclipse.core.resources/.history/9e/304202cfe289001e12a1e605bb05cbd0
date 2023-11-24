@@ -1,0 +1,49 @@
+package model.dao;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+
+import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.ArrayList;
+
+import model.bean.Admin;
+
+public class CheckLoginDAO {
+	public boolean isExistUser(String userName, String passWord) {
+		Boolean isValid = false; //Truy cập vào database xem user và password có đúng không 
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DULIEU1","root","");
+			Statement stm = cnn.createStatement();
+			System.out.println("ket noi thanh còng");
+			String sql = "SELECT * FROM admin"; //truy vấn thông tin từ bảng admin
+			ResultSet rs = stm.executeQuery(sql);
+			while(rs.next()){
+				if( (userName.equals(rs.getString(2)) && passWord.equals(rs.getString(3))) ){
+					isValid = true;
+					break; //bẻ gãy và thoát
+				}
+			}	
+		} 
+		catch (Exception e){
+			System.out.println(e);
+		}
+		return isValid;
+	}
+	
+	public ArrayList<Admin> getAdminList (String userName){
+		ArrayList<Admin> result = new ArrayList<Admin>();
+		//connect vào DB làm một số việc
+		Admin admin = new Admin();
+		admin.setID("3");
+		admin.setUserName("user2");
+		admin.setPassWord("3");
+		result.add(admin);
+		
+		return result;
+	}
+}

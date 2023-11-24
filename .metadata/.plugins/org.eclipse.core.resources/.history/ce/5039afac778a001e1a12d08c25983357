@@ -1,0 +1,16 @@
+<%@page import="modle.bean.SinhVien"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Xem Thông Tin Xin Viên</title>
+</head>
+<body>
+	<table>
+		
+	</table> 
+</body>
+</html>

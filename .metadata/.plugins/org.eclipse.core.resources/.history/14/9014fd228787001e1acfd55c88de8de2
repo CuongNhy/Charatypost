@@ -1,0 +1,18 @@
+<%@ page language="java" import="javax.servlet.RequestDispatcher" %>
+<%@ page language="java" import="javax.servlet.ServletException" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+	<% if(!request.getParameter("user").equals("")) { %>
+	<jsp:forward page="welcome.jsp"/>	
+	<%} else { out.println("Vui lòng nhập đầy đủ thông tin");%>
+	<jsp:forward page="login.jsp"/>
+	<%} %>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+</body>
+</html>
